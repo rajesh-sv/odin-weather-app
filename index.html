@@ -14,9 +14,13 @@
         alt="Icon showing the weather season"
         class="weather-icon"
       />
-      <input type="text" placeholder="Location" />
+      <input id="location-input" type="text" placeholder="Location" />
       <button type="button">Submit</button>
-      <div class="temperature-toggle"></div>
+      <label for="toggle">
+        <input class="input" type="checkbox" id="toggle" checked/>
+        <div class="toggle-wrapper"><span class="selector"></span></div>
+        <p class="notification"><span class="selected"></span></p>
+      </label>
     </div>
     <div class="weather-info"></div>
     <img

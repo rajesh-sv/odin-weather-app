@@ -1,47 +1,128 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 html {
@@ -55,19 +136,19 @@ html {
 }
 
 :root {
-    --header-bg-color: #3700B3;
-    --header-font-color: #fff;
-    --universal-box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.5);
-    --aside-bg-color: #6300ee;
-    --aside-font-color: #fff;
-    --add-item-bg-color: #03dac5;
+  --header-bg-color: #3700b3;
+  --header-font-color: #fff;
+  --universal-box-shadow: 0 3px 5px 2px rgba(0, 0, 0, 0.5);
+  --aside-bg-color: #6300ee;
+  --aside-font-color: #fff;
+  --add-item-bg-color: #03dac5;
 }
 
 body {
-    font-family: Roboto, system-ui, sans-serif;
-    max-width: 2000px;
-    min-width: 500px;
-    margin: 0 auto;
+  font-family: Roboto, system-ui, sans-serif;
+  max-width: 2000px;
+  min-width: 500px;
+  margin: 0 auto;
 }
 
 .header {
@@ -79,12 +160,88 @@ body {
   padding: 25px;
   display: flex;
   align-items: center;
+  gap: 30px;
 }
 
 .weather-icon {
   width: 75px;
   background-color: #fff;
   border-radius: 0.5rem;
+}
+
+#location-input {
+    border: none;
+    box-shadow: var(--universal-box-shadow);
+    border-radius: 0.2rem;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}
+
+button {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: var(--header-bg-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+button:hover {
+    background-color: #03dac5;
+    color: var(--header-font-color);
+}
+
+label {
+    margin-left: auto;
+  pointer-events: none;
+}
+
+label .input {
+  display: none;
+}
+
+label .input:checked + .toggle-wrapper {
+  box-shadow: 0 8px 14px 0 rgba(18, 51, 215, 0.12);
+}
+
+label .input:checked + .toggle-wrapper > .selector {
+  left: 40px;
+  background-color: #03da8f;
+}
+label .input:checked ~ .notification > .selected:before {
+  content: "ºC";
+}
+label .toggle-wrapper {
+  position: relative;
+  width: 70px;
+  height: 35px;
+  background-color: #eaeaea;
+  border-radius: 999px;
+  margin: auto;
+  cursor: pointer;
+  pointer-events: all;
+  box-shadow: 0 8px 14px 0 rgba(215, 60, 18, 0.12);
+}
+label .toggle-wrapper .selector {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-color: #ee5f39;
+  transition: left 0.25s ease;
+  border-radius: 50%;
+}
+label .notification {
+  font-size: 20px;
+  width: 100%;
+}
+label .notification .selected:before {
+  content: "ºF";
+  font-size: 20px;
+  border-bottom: 2px solid;
 }
 
 * {
