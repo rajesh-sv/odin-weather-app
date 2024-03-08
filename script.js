@@ -22,7 +22,7 @@ const WEATHER_API_KEY = '61847929774a4b95b1c94052240503';
 const GIPGY_API_KEY = 'lZ2Xmj4Rg6HREtp1jshZ2QZE34ei9MZ8';
 
 function getWeatherInfo(location) {
-    const baseURL = 'http://api.weatherapi.com/v1';
+    const baseURL = 'https://api.weatherapi.com/v1';
     const endpoint = '/current.json';
     const URL = baseURL + endpoint + '?key=' + WEATHER_API_KEY + '&q=' + location;
     
