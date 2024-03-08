@@ -169,6 +169,12 @@ body {
   border-radius: 0.5rem;
 }
 
+form {
+  display: flex;
+  align-items: center;
+  gap: 30px
+}
+
 #location-input {
     border: none;
     box-shadow: var(--universal-box-shadow);
@@ -244,6 +250,17 @@ label .notification .selected:before {
   border-bottom: 2px solid;
 }
 
-* {
-  outline: 1px solid red;
+.main {
+  padding: 50px;
+  display: flex;
+  align-items: stretch;
+  gap: 100px
+}
+
+p {
+  margin-bottom: 5px;
+}
+
+.weather-gif-container {
+  flex: 1;
 }

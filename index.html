@@ -14,19 +14,19 @@
         alt="Icon showing the weather season"
         class="weather-icon"
       />
-      <input id="location-input" type="text" placeholder="Location" />
-      <button type="button">Submit</button>
+      <form action="#">
+      <input id="location-input" type="text" placeholder="Location" required/>
+      <button>Submit</button>
+      </form>
       <label for="toggle">
         <input class="input" type="checkbox" id="toggle" checked/>
         <div class="toggle-wrapper"><span class="selector"></span></div>
         <p class="notification"><span class="selected"></span></p>
       </label>
     </div>
+    <div class="main">
     <div class="weather-info"></div>
-    <img
-      class="weather-gif"
-      src="#"
-      alt="Gif showing weather of the Location"
-    />
+    <div class="weather-gif-container"></div>
+    </div>
   </body>
 </html>
